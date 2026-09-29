@@ -4,26 +4,288 @@ import Header from '@/components/header';
 import QuoteForm from '@/components/quote-form';
 import ServiceLink from '@/components/service-link';
 
-const business = {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Taylors Hill Fencing and Landscaping","telephone":"+61402064931","email":"thefence@y7mail.com","areaServed":"Taylors Hill and surrounding suburbs, Victoria","sameAs":["https://www.facebook.com/p/Taylors-Hill-Fencing-and-Landscaping-100063705425533/"]};
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HomeAndConstructionBusiness',
+  name: 'Taylors Hill Fencing and Landscaping',
+  telephone: '+61402064931',
+  email: 'thefence@y7mail.com',
+  areaServed: ['Taylors Hill', 'Melbourne western suburbs'],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Taylors Hill',
+    addressRegion: 'VIC',
+    postalCode: '3037',
+    addressCountry: 'AU',
+  },
+  sameAs: [
+    'https://www.facebook.com/p/Taylors-Hill-Fencing-and-Landscaping-100063705425533/',
+  ],
+};
+
+const services = [
+  {
+    number: '01',
+    title: 'Timber fencing',
+    copy: 'Privacy, boundary and feature fencing for homes across Taylors Hill and nearby suburbs.',
+    service: 'Timber fencing',
+  },
+  {
+    number: '02',
+    title: 'Steel & aluminium',
+    copy: 'Durable, low-maintenance fencing with clean lines and practical finishes.',
+    service: 'Steel or aluminium fencing',
+  },
+  {
+    number: '03',
+    title: 'Gates & access',
+    copy: 'Pedestrian and driveway access that works with your fence, property and day-to-day use.',
+    service: 'Gates',
+  },
+  {
+    number: '04',
+    title: 'Landscaping',
+    copy: 'Outdoor improvements that help the fence, garden and usable space feel like one finished job.',
+    service: 'Landscaping',
+  },
+];
+
+const areas = ['Taylors Hill', 'Hillside', 'Delahey', 'Burnside Heights', 'Caroline Springs', 'Keilor Downs'];
 
 export default function Home() {
-  return <>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(business).replace(/</g, '\\u003c') }} />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema).replace(/</g, '\\u003c') }}
+      />
 
-<a className="skip" href="#main">Skip to content</a>
-<div className="topbar"><span>LOCAL FENCING & LANDSCAPING · TAYLORS HILL, VIC</span><a href="tel:+61402064931">Let’s talk about your project: 0402 064 931</a></div>
-<Header />
-<main id="main">
-<section className="hero"><div className="hero-copy"><p className="eyebrow">YOUR LOCAL FENCING & LANDSCAPING TEAM</p><h1>Good fences.<br />Better <em>outdoor<br />living.</em></h1><p className="hero-intro">A little more privacy. A proper boundary. An outdoor space that feels like yours. Let’s bring it together.</p><div className="actions"><a className="button button-peach" href="#contact">Tell us about your project</a><a className="text-link light" href="tel:+61402064931">0402 064 931</a></div><div className="hero-bottom"><span>BASED IN TAYLORS HILL</span><span>SERVING OUR LOCAL COMMUNITY</span></div></div><div className="hero-visual"><Image src={heroImage} alt="Illustrative Australian garden with timber fencing and a green lawn" fill sizes="(max-width: 740px) 100vw, 50vw" preload placeholder="blur" /><div className="photo-label"><span>OUTDOOR INSPIRATION · ILLUSTRATIVE IMAGE</span><strong>Your place.<br />Your own little outdoors.</strong></div></div></section>
-<div className="service-strip" aria-label="Services"><span>Timber fencing</span><b aria-hidden="true">✳</b><span>Steel fencing</span><b aria-hidden="true">✳</b><span>Gates</span><b aria-hidden="true">✳</b><span>Landscaping</span></div>
-<section id="services" className="section services"><div className="section-heading"><div><p className="eyebrow">01 / WHAT WE DO</p><h2>From the boundary<br />to the backyard.</h2></div><p>A new fence, a practical gate or plans for the garden. Start with what you need, and we’ll talk through the options for your place.</p></div><div className="service-grid"><article><span className="service-number">01</span><h3>Timber fencing</h3><p>A natural look for your boundary, with the privacy you want for your home and garden.</p><ServiceLink service="Timber fencing">Discuss timber fencing</ServiceLink></article><article><span className="service-number">02</span><h3>Steel & aluminium</h3><p>Clean lines and a practical finish. Explore metal fencing options that suit your property.</p><ServiceLink service="Steel or aluminium fencing">Discuss metal fencing</ServiceLink></article><article><span className="service-number">03</span><h3>Gates & access</h3><p>Make getting in and out easier, with a gate that works with your fence and the way you use your space.</p><ServiceLink service="Gates">Discuss a gate</ServiceLink></article><article><span className="service-number">04</span><h3>Landscaping</h3><p>Have something in mind for your outdoor space? Share your ideas and ask how we can help.</p><ServiceLink service="Landscaping">Discuss your garden</ServiceLink></article></div></section>
-<section id="work" className="section work"><div className="section-heading"><div><p className="eyebrow">02 / A LOOK AT OUR WORK</p><h2>Made for real homes.</h2></div><a className="text-link" href="https://www.facebook.com/p/Taylors-Hill-Fencing-and-Landscaping-100063705425533/" target="_blank" rel="noopener noreferrer">See more on Facebook</a></div><div className="project-links"><a className="project-link" href="https://www.facebook.com/100063705425533/photos/merbau-screen-fencework-in-progress/1972019679487457/" target="_blank" rel="noopener noreferrer"><span className="project-index">01</span><div><p className="eyebrow">FROM OUR FACEBOOK</p><h3>Merbau screen fencing</h3><p>Take a look at a screen fence in progress.</p></div><span className="project-link-label">View project on Facebook</span></a><a className="project-link" href="https://www.facebook.com/100063705425533/photos/1394045129395655/" target="_blank" rel="noopener noreferrer"><span className="project-index">02</span><div><p className="eyebrow">FROM OUR FACEBOOK</p><h3>Out on the tools</h3><p>See a project shared by our team.</p></div><span className="project-link-label">View project on Facebook</span></a></div></section>
-<section id="about" className="about section"><div><p className="eyebrow">03 / CLOSE TO HOME</p><h2>Good fences make<br /><em>good neighbours.</em></h2></div><div className="about-copy"><p className="large-copy">It’s more than a fence. It’s the backdrop to your home.</p><p>We’re Taylors Hill Fencing and Landscaping, serving Taylors Hill and surrounding areas with domestic timber, steel and aluminium fencing and gates.</p><p>Whether you’re starting with a new boundary or making a change to your existing outdoor space, we’re here to talk it through.</p><div className="local-note"><span aria-hidden="true">⌖</span><div><strong>Taylors Hill & surrounding suburbs</strong><p>Tell us your suburb when you enquire, so we can confirm we service your address.</p></div></div></div></section>
-<section className="section process"><div className="section-heading"><div><p className="eyebrow">04 / LET’S GET STARTED</p><h2>A good result starts<br />with a conversation.</h2></div></div><div className="steps"><article><span>01</span><h3>Tell us what you need</h3><p>Send your suburb, a few photos and a rough idea of the job. Starting from scratch? That’s fine too.</p></article><article><span>02</span><h3>Talk through the options</h3><p>Discuss the materials, access and scope, and arrange the next step for an accurate quote.</p></article><article><span>03</span><h3>Plan your project</h3><p>Once you’re happy with the quote, confirm the details and agree on a time for the work.</p></article></div></section>
-<section className="section faq"><div><p className="eyebrow">A FEW COMMON QUESTIONS</p><h2>Before we begin.</h2></div><div className="questions"><details><summary>What types of fencing can I ask about?</summary><p>We work with domestic timber, steel and aluminium fencing and gates. Tell us the look and level of privacy you have in mind, and we can discuss suitable options.</p></details><details><summary>Do you work outside Taylors Hill?</summary><p>We serve Taylors Hill and surrounding areas. Include your suburb in your enquiry so we can confirm your location before arranging a visit.</p></details><details><summary>What should I include when asking for a quote?</summary><p>Your suburb, the type of job, approximate fence length or area if you know it, and whether there’s an existing fence to consider. Photos of the site are helpful too.</p></details><details><summary>Can I send you photos of the job?</summary><p>Yes. Text photos to <a href="sms:+61402064931">0402 064 931</a> or attach them to your email. Include a short description so we know what you’re planning.</p></details></div></section>
-<section id="contact" className="section contact"><div className="contact-copy"><p className="eyebrow">YOUR NEXT PROJECT STARTS HERE</p><h2>Let’s make more<br />of your <em>outdoors.</em></h2><p>Tell us a little about your place and what you’d like to do. We’ll take it from there.</p><a className="phone" href="tel:+61402064931">0402 064 931</a><a className="email" href="mailto:thefence@y7mail.com">thefence@y7mail.com</a><div className="contact-links"><a href="sms:+61402064931">Send a text</a><a href="https://www.facebook.com/p/Taylors-Hill-Fencing-and-Landscaping-100063705425533/" target="_blank" rel="noopener noreferrer">Visit our Facebook</a></div></div><QuoteForm /></section>
-</main>
-<footer><a className="brand" href="#"><span className="brand-mark" aria-hidden="true">TH<span>///</span></span><span>TAYLORS HILL<small>FENCING & LANDSCAPING</small></span></a><p>Good fences. Better outdoor living.</p><span>© <span>{new Date().getFullYear()}</span> Taylors Hill Fencing and Landscaping</span></footer><div className="mobile-contact"><a href="tel:+61402064931">Call 0402 064 931</a><a href="#contact">Get a quote</a></div>
+      <a className="skip-link" href="#main">Skip to content</a>
+      <div className="topbar">
+        <span>LOCAL FENCING & LANDSCAPING · TAYLORS HILL</span>
+        <a href="tel:+61402064931">Call 0402 064 931</a>
+      </div>
+      <Header />
 
-  </>;
+      <main id="main">
+        <section className="hero">
+          <div className="hero__copy">
+            <p className="eyebrow">FENCING & OUTDOOR WORK · MELBOURNE WEST</p>
+            <h1>Make the outside of your home feel <em>finished.</em></h1>
+            <p className="hero__lead">
+              Fencing, gates and landscaping for homeowners who want a cleaner boundary,
+              more privacy and an outdoor space that works properly.
+            </p>
+            <div className="hero__actions">
+              <a className="button button--accent" href="#contact">Get a free quote</a>
+              <a className="phone-link" href="tel:+61402064931">0402 064 931</a>
+            </div>
+            <div className="hero__proof">
+              <div><strong>Local</strong><span>Based in Taylors Hill</span></div>
+              <div><strong>Residential</strong><span>Fences, gates & outdoor work</span></div>
+              <div><strong>Simple</strong><span>Send photos to get started</span></div>
+            </div>
+          </div>
+
+          <div className="hero__media">
+            <Image
+              src={heroImage}
+              alt="Australian suburban garden with timber fencing and lawn"
+              fill
+              priority
+              sizes="(max-width: 820px) 100vw, 48vw"
+            />
+            <div className="hero__scrim" />
+            <div className="hero__caption">
+              <span>FENCING · GATES · LANDSCAPING</span>
+              <strong>Built around your home.</strong>
+            </div>
+          </div>
+        </section>
+
+        <section className="trust-strip" aria-label="Business highlights">
+          <span>Domestic fencing</span><i>•</i>
+          <span>Timber</span><i>•</i>
+          <span>Steel & aluminium</span><i>•</i>
+          <span>Gates</span><i>•</i>
+          <span>Landscaping</span>
+        </section>
+
+        <section id="services" className="section services">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">WHAT WE DO</p>
+              <h2>One local team for the boundary and the backyard.</h2>
+            </div>
+            <p>
+              No need to overcomplicate it. Tell us what you want changed and we’ll talk through the
+              practical options for the property.
+            </p>
+          </div>
+
+          <div className="service-grid">
+            {services.map((item) => (
+              <article className="service-card" key={item.number}>
+                <span className="service-card__number">{item.number}</span>
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+                <ServiceLink service={item.service}>Ask about {item.title.toLowerCase()} →</ServiceLink>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="work" className="section work">
+          <div className="work__intro">
+            <p className="eyebrow">RECENT WORK</p>
+            <h2>See the jobs, not just the sales pitch.</h2>
+            <p>
+              The business regularly shares project photos on Facebook. Open the project links below
+              to see work posted by Taylors Hill Fencing and Landscaping.
+            </p>
+            <a
+              className="text-link"
+              href="https://www.facebook.com/p/Taylors-Hill-Fencing-and-Landscaping-100063705425533/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View the Facebook page →
+            </a>
+          </div>
+
+          <div className="project-stack">
+            <a
+              className="project-card project-card--timber"
+              href="https://www.facebook.com/100063705425533/photos/merbau-screen-fencework-in-progress/1972019679487457/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="project-card__index">01</span>
+              <div>
+                <span className="project-card__meta">PROJECT POST · FACEBOOK</span>
+                <h3>Merbau screen fence</h3>
+                <p>Work-in-progress project shared by the team.</p>
+              </div>
+              <span className="project-card__arrow" aria-hidden="true">↗</span>
+            </a>
+            <a
+              className="project-card project-card--green"
+              href="https://www.facebook.com/100063705425533/photos/1394045129395655/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="project-card__index">02</span>
+              <div>
+                <span className="project-card__meta">PROJECT POST · FACEBOOK</span>
+                <h3>More work from the team</h3>
+                <p>Another job posted directly to the business Facebook page.</p>
+              </div>
+              <span className="project-card__arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </section>
+
+        <section id="about" className="section about">
+          <div className="about__title">
+            <p className="eyebrow">LOCAL MATTERS</p>
+            <h2>A fence is part of the home, not an afterthought.</h2>
+          </div>
+          <div className="about__copy">
+            <p className="lead-copy">
+              Taylors Hill Fencing and Landscaping services Taylors Hill and surrounding areas with
+              domestic fencing, gates and outdoor work.
+            </p>
+            <p>
+              Whether you need more privacy, a cleaner street frontage or a practical gate, the first
+              step is simple: send through the suburb, a few photos and what you want done.
+            </p>
+            <div className="area-box">
+              <span className="area-box__pin" aria-hidden="true">⌖</span>
+              <div>
+                <strong>Local service area</strong>
+                <div className="area-chips">
+                  {areas.map((area) => <span key={area}>{area}</span>)}
+                </div>
+                <p>Nearby suburb not listed? Ask and we’ll confirm.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section process">
+          <div className="section-heading section-heading--light">
+            <div>
+              <p className="eyebrow">HOW TO GET STARTED</p>
+              <h2>From “we need a new fence” to a clear next step.</h2>
+            </div>
+          </div>
+          <div className="steps">
+            <article><span>01</span><h3>Send the basics</h3><p>Your suburb, photos, rough measurements and the type of work you’re considering.</p></article>
+            <article><span>02</span><h3>Talk through the job</h3><p>We’ll discuss materials, access, existing fencing and what needs to happen next.</p></article>
+            <article><span>03</span><h3>Get the quote</h3><p>Once the scope is clear, you can decide whether the job and timing suit you.</p></article>
+          </div>
+        </section>
+
+        <section className="section faq">
+          <div>
+            <p className="eyebrow">COMMON QUESTIONS</p>
+            <h2>Before you enquire.</h2>
+          </div>
+          <div className="questions">
+            <details>
+              <summary>What fencing do you work with?</summary>
+              <p>Domestic timber, steel and aluminium fencing, plus gates. Send a photo if you’re unsure what material or style you currently have.</p>
+            </details>
+            <details>
+              <summary>Do you work outside Taylors Hill?</summary>
+              <p>Yes, the business services Taylors Hill and surrounding areas. Include your suburb in the enquiry so the location can be confirmed.</p>
+            </details>
+            <details>
+              <summary>What helps with an accurate quote?</summary>
+              <p>Photos, approximate fence length, your suburb, access details and whether an old fence needs to be considered are all useful.</p>
+            </details>
+            <details>
+              <summary>Can I text photos?</summary>
+              <p>Yes. Text the business on <a href="sms:+61402064931">0402 064 931</a> with a short description of the job.</p>
+            </details>
+          </div>
+        </section>
+
+        <section id="contact" className="section quote">
+          <div className="quote__copy">
+            <p className="eyebrow">GET A QUOTE</p>
+            <h2>Tell us what you want done.</h2>
+            <p>
+              Send the details now, or call if it’s easier to explain the job over the phone.
+            </p>
+            <a className="quote__phone" href="tel:+61402064931">0402 064 931</a>
+            <a className="quote__email" href="mailto:thefence@y7mail.com">thefence@y7mail.com</a>
+            <div className="quote__links">
+              <a href="sms:+61402064931">Send a text</a>
+              <a
+                href="https://www.facebook.com/p/Taylors-Hill-Fencing-and-Landscaping-100063705425533/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Facebook</a>
+            </div>
+          </div>
+          <QuoteForm />
+        </section>
+      </main>
+
+      <footer>
+        <a className="brand" href="#" aria-label="Back to top">
+          <span className="brand__mark" aria-hidden="true">TH</span>
+          <span className="brand__text">TAYLORS HILL<small>FENCING & LANDSCAPING</small></span>
+        </a>
+        <p>Fencing, gates and landscaping in Melbourne’s west.</p>
+        <span>© {new Date().getFullYear()} Taylors Hill Fencing and Landscaping</span>
+      </footer>
+
+      <div className="mobile-cta">
+        <a href="tel:+61402064931">Call now</a>
+        <a href="#contact">Get a quote</a>
+      </div>
+    </>
+  );
 }
