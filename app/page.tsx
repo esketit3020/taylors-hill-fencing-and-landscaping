@@ -1,8 +1,12 @@
-import Image from 'next/image';
-import heroImage from '@/public/assets/hero.jpg';
+import heroImage1 from '@/lib/hero-image-1';
+import heroImage2 from '@/lib/hero-image-2';
+import heroImage3 from '@/lib/hero-image-3';
+import heroImage4 from '@/lib/hero-image-4';
 import Header from '@/components/header';
 import QuoteForm from '@/components/quote-form';
 import ServiceLink from '@/components/service-link';
+
+const heroImage = `data:image/jpeg;base64,${heroImage1}${heroImage2}${heroImage3}${heroImage4}`;
 
 const businessSchema = {
   '@context': 'https://schema.org',
@@ -88,12 +92,11 @@ export default function Home() {
           </div>
 
           <div className="hero__media">
-            <Image
+            <img
               src={heroImage}
-              alt="Australian suburban garden with timber fencing and lawn"
-              fill
-              priority
-              sizes="(max-width: 820px) 100vw, 48vw"
+              alt="Timber slat screen fence beside a brick home in warm evening light"
+              loading="eager"
+              fetchPriority="high"
             />
             <div className="hero__scrim" />
             <div className="hero__caption">
