@@ -1,13 +1,12 @@
-import hero6000 from '@/lib/hero600-0';
-import hero6001 from '@/lib/hero600-1';
-import hero6002 from '@/lib/hero600-2';
-import hero6003 from '@/lib/hero600-3';
-import hero6004 from '@/lib/hero600-4';
+import heroLatest0 from '@/lib/hero-latest-0';
+import heroLatest1 from '@/lib/hero-latest-1';
+import heroLatest2 from '@/lib/hero-latest-2';
+import heroLatest3 from '@/lib/hero-latest-3';
 import Header from '@/components/header';
 import QuoteForm from '@/components/quote-form';
 import ServiceLink from '@/components/service-link';
 
-const heroImage = `data:image/jpeg;base64,${hero6000}${hero6001}${hero6002}${hero6003}${hero6004}`;
+const heroImage = `data:image/jpeg;base64,${heroLatest0}${heroLatest1}${heroLatest2}${heroLatest3}`;
 
 const businessSchema = {
   '@context': 'https://schema.org',
@@ -95,7 +94,7 @@ export default function Home() {
           <div className="hero__media">
             <img
               src={heroImage}
-              alt="Timber slat screen fence beside a brick home in warm evening light"
+              alt="Timber slat fence screening in front of a modern brick home at sunset"
               loading="eager"
               fetchPriority="high"
             />
