@@ -69,19 +69,19 @@ export default function Home() {
         <section className="hero">
           <div className="hero__copy">
             <p className="eyebrow">FENCING & OUTDOOR WORK · MELBOURNE WEST</p>
-            <h1>Make the outside of your home feel <em>finished.</em></h1>
+            <h1>Good Fences Make Good <em>Neighbours.</em></h1>
             <p className="hero__lead">
-              Fencing, gates and landscaping for homeowners who want a cleaner boundary,
-              more privacy and an outdoor space that works properly.
+              Fencing, gates and landscaping backed by 23 years of experience,
+              helping homeowners across Taylors Hill and Melbourne’s west.
             </p>
             <div className="hero__actions">
               <a className="button button--accent" href="#contact">Get a free quote</a>
               <a className="phone-link" href="tel:+61402064931">0402 064 931</a>
             </div>
             <div className="hero__proof">
+              <div><strong>23 Years</strong><span>Experience in fencing & landscaping</span></div>
               <div><strong>Local</strong><span>Based in Taylors Hill</span></div>
               <div><strong>Residential</strong><span>Fences, gates & outdoor work</span></div>
-              <div><strong>Simple</strong><span>Send photos to get started</span></div>
             </div>
           </div>
 
@@ -95,7 +95,7 @@ export default function Home() {
             <div className="hero__scrim" />
             <div className="hero__caption">
               <span>FENCING · GATES · LANDSCAPING</span>
-              <strong>Built around your home.</strong>
+              <strong>23 years of local experience.</strong>
             </div>
           </div>
         </section>
@@ -185,8 +185,8 @@ export default function Home() {
           </div>
           <div className="about__copy">
             <p className="lead-copy">
-              Taylors Hill Fencing and Landscaping services Taylors Hill and surrounding areas with
-              domestic fencing, gates and outdoor work.
+              With 23 years of experience, Taylors Hill Fencing and Landscaping services Taylors Hill
+              and surrounding areas with domestic fencing, gates and outdoor work.
             </p>
             <p>
               Whether you need more privacy, a cleaner street frontage or a practical gate, the first
