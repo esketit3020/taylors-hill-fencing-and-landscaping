@@ -1,5 +1,7 @@
 node_modules/
-.sites-runtime/
-.env
-.env.*
-*.tar.gz
+.next/
+out/
+.vercel/
+.env*
+!.env.example
+*.tsbuildinfo

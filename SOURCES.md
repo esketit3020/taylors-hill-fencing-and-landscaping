@@ -9,6 +9,6 @@ Researched 29 September 2026.
 
 ## Images
 
-`dist/assets/hero.jpg` is AI-generated, illustrative outdoor inspiration, clearly labelled on the website. It is not presented as a completed Taylors Hill Fencing and Landscaping project.
+`public/assets/hero.jpg` is AI-generated, illustrative outdoor inspiration, clearly labelled on the website. It is not presented as a completed Taylors Hill Fencing and Landscaping project.
 
 The website does not reproduce customer reviews, make unverified licensing/insurance claims, publish a home street address, or guarantee availability or results.

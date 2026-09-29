@@ -1,19 +1,32 @@
 # Taylors Hill Fencing & Landscaping
 
-Responsive static website for the local fencing and landscaping business.
+Next.js App Router website with TypeScript and React. Responsive design, optimised hero image, mobile navigation, service selection, FAQs and an email enquiry flow.
 
-## Preview
+## Run locally
 
-Run `python3 -m http.server 8000 --directory dist` and open http://localhost:8000.
+Requires Node.js 22.
 
-## Deployment
+```sh
+npm ci
+npm run dev
+```
 
-No dependencies or build step. Publish the `dist` directory on Netlify, Cloudflare Pages, GitHub Pages or any static host. Netlify configuration is included.
+## Verify production build
+
+```sh
+npm run build
+npm run typecheck
+npm start
+```
+
+## Deploy to Vercel
+
+Import `esketit3020/taylors-hill-fencing-and-landscaping` into Vercel. Use repository root, Next.js framework preset and default build/output settings. No environment variables are required. Future pushes to `main` deploy automatically when Git integration is connected.
 
 ## Enquiries
 
-Click-to-call, SMS and Facebook links work directly. The quote form prepares an email in the visitor's own email client; it does not submit to a server or claim an enquiry was sent. Connect a form service later if server delivery is required.
+Call, SMS and Facebook links work directly. The form prepares an email in the visitor’s email application; it does not send from a backend. Visitors review and send their own email.
 
-## Content
+## Content and imagery
 
-Phone: 0402 064 931. Email: thefence@y7mail.com. Public business sources and image provenance are recorded in SOURCES.md. No invented reviews, ratings, licence claims, project counts or guarantees are included.
+Phone: 0402 064 931. Email: thefence@y7mail.com. The hero image is labelled AI-generated illustrative inspiration, not a completed project. Actual projects link to the business’s Facebook posts. Provenance is recorded in SOURCES.md.
