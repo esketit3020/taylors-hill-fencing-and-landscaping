@@ -136,49 +136,45 @@ export default function Home() {
           <div className="work__intro">
             <p className="eyebrow">RECENT WORK</p>
             <h2>See the jobs, not just the sales pitch.</h2>
-            <p>
-              The business regularly shares project photos on Facebook. Open the project links below
-              to see work posted by Taylors Hill Fencing and Landscaping.
-            </p>
             <a
               className="text-link"
               href="https://www.facebook.com/p/Taylors-Hill-Fencing-and-Landscaping-100063705425533/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              View the Facebook page →
+              More work on Facebook →
             </a>
           </div>
 
-          <div className="project-stack">
-            <a
-              className="project-card project-card--timber"
-              href="https://www.facebook.com/100063705425533/photos/merbau-screen-fencework-in-progress/1972019679487457/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="project-card__index">01</span>
-              <div>
-                <span className="project-card__meta">PROJECT POST · FACEBOOK</span>
-                <h3>Merbau screen fence</h3>
-                <p>Work-in-progress project shared by the team.</p>
-              </div>
-              <span className="project-card__arrow" aria-hidden="true">↗</span>
-            </a>
-            <a
-              className="project-card project-card--green"
-              href="https://www.facebook.com/100063705425533/photos/1394045129395655/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="project-card__index">02</span>
-              <div>
-                <span className="project-card__meta">PROJECT POST · FACEBOOK</span>
-                <h3>More work from the team</h3>
-                <p>Another job posted directly to the business Facebook page.</p>
-              </div>
-              <span className="project-card__arrow" aria-hidden="true">↗</span>
-            </a>
+          <div className="project-gallery" aria-label="Recent fencing projects">
+            <figure className="project-photo">
+              <img
+                src="/assets/project-picket.jpg"
+                alt="Dark grey picket fence and gate installed in front of a brick home"
+                loading="lazy"
+              />
+            </figure>
+            <figure className="project-photo">
+              <img
+                src="/assets/project-cream-colorbond.jpg"
+                alt="Cream Colorbond privacy fence and side gate beside a brick home"
+                loading="lazy"
+              />
+            </figure>
+            <figure className="project-photo">
+              <img
+                src="/assets/project-black-driveway.jpg"
+                alt="Dark Colorbond fence with timber retaining boards beside a sloped driveway"
+                loading="lazy"
+              />
+            </figure>
+            <figure className="project-photo">
+              <img
+                src="/assets/project-tall-colorbond.jpg"
+                alt="Tall two-tone Colorbond boundary fence above a masonry retaining wall"
+                loading="lazy"
+              />
+            </figure>
           </div>
         </section>
 
