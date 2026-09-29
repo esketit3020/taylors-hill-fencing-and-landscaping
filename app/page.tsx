@@ -1,12 +1,13 @@
-import heroImage1 from '@/lib/hero-image-1';
-import heroImage2 from '@/lib/hero-image-2';
-import heroImage3 from '@/lib/hero-image-3';
-import heroImage4 from '@/lib/hero-image-4';
+import hero6000 from '@/lib/hero600-0';
+import hero6001 from '@/lib/hero600-1';
+import hero6002 from '@/lib/hero600-2';
+import hero6003 from '@/lib/hero600-3';
+import hero6004 from '@/lib/hero600-4';
 import Header from '@/components/header';
 import QuoteForm from '@/components/quote-form';
 import ServiceLink from '@/components/service-link';
 
-const heroImage = `data:image/jpeg;base64,${heroImage1}${heroImage2}${heroImage3}${heroImage4}`;
+const heroImage = `data:image/jpeg;base64,${hero6000}${hero6001}${hero6002}${hero6003}${hero6004}`;
 
 const businessSchema = {
   '@context': 'https://schema.org',
